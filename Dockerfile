@@ -1,6 +1,6 @@
 #
 # ---- Dependencies ----
-FROM arm32v7/node:8 AS dependencies
+FROM arm32v7/node:10 AS dependencies
 WORKDIR /usr/src/app
 
 # install node modules
@@ -22,7 +22,7 @@ RUN npm run build
 
 #
 # ---- Release ----
-FROM arm32v7/node:8-slim AS release
+FROM arm32v7/node:10-slim AS release
 WORKDIR /usr/src/app
 
 # copy production node_modules
